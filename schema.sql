@@ -17,7 +17,7 @@ CREATE TABLE orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     order_date DATE NOT NULL,
-    status VARCHAR(30) NOT NULL, -- наприклад: 'Completed', 'Processing', 'Cancelled'
+    status VARCHAR(30) NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
