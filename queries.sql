@@ -1,4 +1,4 @@
-
+USE shop_analytics;
 -- Клієнти з Києва, зареєстровані у 2026 році
 SELECT name, email, registration_date
 FROM users
