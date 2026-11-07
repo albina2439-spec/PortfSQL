@@ -63,8 +63,7 @@ LEFT JOIN orders o ON u.user_id = o.user_id
 WHERE o.order_id IS NULL;
 
 
--- 7. Дохід по місяцях та зростання відносно попереднього місяця
--- Навичка: CTE, віконна функція LAG, робота з датами
+-- Дохід по місяцях та зростання відносно попереднього місяця
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(order_date, '%Y-%m') AS month,
@@ -85,8 +84,7 @@ FROM monthly_revenue
 ORDER BY month;
 
 
--- 8. Рейтинг клієнтів за сумою витрат
--- Навичка: віконна функція RANK
+-- Рейтинг клієнтів за сумою витрат
 SELECT
     u.name,
     u.city,
@@ -99,8 +97,7 @@ GROUP BY u.user_id, u.name, u.city
 ORDER BY spending_rank;
 
 
--- 9. Сегментація клієнтів за рівнем витрат
--- Навичка: CTE + CASE
+-- Сегментація клієнтів за рівнем витрат
 WITH customer_totals AS (
     SELECT
         u.user_id,
